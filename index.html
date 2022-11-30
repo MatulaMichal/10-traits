@@ -1,0 +1,100 @@
+<!-- TO DO:
+modal on reset
+position of x on instruction modal -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js"></script>
+  </head>
+  <body onload="generateTable()">
+    <div class="ctnr">
+    
+      <div id="menu">
+        <button id="menu-bar" tabindex="1" onclick="menuOnClick()">
+          <div id="bar1" class="bar"></div>
+          <div id="bar2" class="bar"></div>
+          <div id="bar3" class="bar"></div>
+        </button>
+        <nav class="nav" id="nav">
+          <ul>
+            <li id="menu-reset"><span class='menu-spn'><img src="assets/images/repeat.svg" class='menu-icon'/><button class="menu-btn" onclick="resetClick()">Zacznij od nowa</a></span></li>
+            <li><span class='menu-spn'><img src="assets/images/fullscreen.svg" class='menu-icon'/><button class="menu-btn" onclick="triggerFullscreen()">Tryb pełnoekranowy</a></span></li>
+            <li><span class='menu-spn'><img src="assets/images/exit.svg" class='menu-icon'/><a href="">Wyjdź do listy gier</a></span></li>
+            <li><span class="access">DOSTĘPNOŚĆ</span></li>
+            <li><span class='menu-spn'><img src="assets/images/highContrast.svg" class='menu-icon'/><button class="menu-btn" onclick="toggleContrast()">Tryb kontrastowy</a></span></li>
+            <li><span class='menu-spn'><img src="assets/images/text.svg" class='menu-icon'/><button class="menu-btn" onclick="setFontMultiplier(1)">Mały tekst</a></span></li>
+            <li><span class='menu-spn'><img src="assets/images/text.svg" class='menu-icon med'/><button class="menu-btn" onclick="setFontMultiplier(1.0625)">Średni tekst</a></span></li>
+            <li><span class='menu-spn'><img src="assets/images/text.svg" class='menu-icon big'/><button class="menu-btn" onclick="setFontMultiplier(1.125)">Duży tekst</a></span></li>
+          </ul>
+        </nav> 
+      </div>  
+      <div class="menu-bg" id="menu-bg"></div>
+      <div  id="menu-overlay" onclick="menuOnClick()"></div>
+
+      <div class="trs" id="start_transition">
+        <div class="bg" id='bg'>
+         <div class='grd_line_ctnr'>Wektory życia <div class='grd_line'></div> </div>
+          <div class='tri0'><img src="/assets/images/triangle.svg" class='triImg0' alt='triangle0'></img></div>        
+          <div class='tri1'><img src="/assets/images/triangle.svg" class='triImg1' alt='triangle1'></img></div>
+          <div class='tri2'><img src="/assets/images/triangle.svg" class='triImg2' alt='triangle2'></img></div>
+          <div class='tri3'><img src="/assets/images/triangle.svg" class='triImg3' alt='triangle3'></img></div>
+          <div class='tri4'><img src="/assets/images/triangle.svg" class='triImg4' alt='triangle4'></img></div>
+          <div class='footer'><img src="/assets/images/triangle2.svg" class='triImg5' alt='triangle5'>
+            <div class='logo_ctnr'>
+            <img src="/assets/images/zaZyciem.png"  alt='zaZyciem'></img>
+            <img src="/assets/images/mrips.png"  alt='mrips'></img>
+            <img src="/assets/images/mein.png"  alt='mein'></img>
+            <img src="/assets/images/ore.png"  alt='ore'></img>
+            <img src="/assets/images/wektoryZycia.png"  alt='wektoryZycia'></img>
+          </div></div>
+          <h1 class="h1 " id="start_title">10 cech idealnej metody</h1>
+          <button class="btn" id="start_btn" tabindex="2"  onclick="transition()">START</button>
+
+        </div>
+      </div>
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content" >
+          <span class="close" onclick="hideModal()">&times;</span>
+          <div class="modal-text">
+         
+          <h2 class="h1 h1_mg h1media h1Dark">Instrukcja</h2>
+          <p class="dsc align dsc_padding dscmedia">W celu wypełniania tabeli interaktywnej kliknij w wybrane pole. Następnie zostaną wyświetlone 3 możliwe opcje, wybierz jedną z nich.</p>
+          <button class="btn" onclick="hideModal()">OK</button>
+          </div>
+        </div> 
+      </div>
+
+      <div id="resetModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content modal-reset" onclick="hideResetModal()">
+          <span class="close">&times;</span>
+          <div class="modal-text">
+          <h2 class="h1 h1_mgReset h1media h1Dark">Zacznij od nowa</h2>
+          <p class="dsc align dscReset dscmedia">Czy na pewno chcesz zacząć od nowa?</p>
+         <div class="btn_cnr"> <button class="btn" onclick="hideResetModal()">Nie</button><button class="btn_alt " onclick="clearValuesNoMenu()">Tak</button></div>
+          </div>
+        </div> 
+      </div>
+      <div class="answer-modal" id="answerModal">
+        <div  class="answerOverlay" id="answerOverlay" onclick=""></div>
+      <button id="plus" class="positive">+</button>
+      <button id="plus_minus" class="neutral">+    -</button>
+      <button id="minus" class="negative">-</button>
+           </div>
+      <div class="tbl" id="table">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- Tło Tytuł przycisk start -> tło tabela jak naciśniesz na pole to wybierasz z modala + +/- -, rozwijane menu: 
+pełnoekranowy 
+wyjdź 
+od nowa (czyści)
+ -->
