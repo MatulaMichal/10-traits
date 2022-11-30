@@ -90,6 +90,7 @@ function hideModal() {
 }
 
 function onButtonClick(id, e) {
+  console.log(e);
   showAnswerModal(id, e);
 }
 
@@ -103,7 +104,8 @@ function showAnswerModal(id, e) {
   const button = document.getElementById(id);
   // const modalOverlay = document.getElementById("answerOverlay");
   // modalOverlay.style.display = "flex";
-  if (e.pointerId === -1) {
+
+  if (e.clientX === 0 && e.clientY === 0) {
     const rect = button.getBoundingClientRect();
     modal.style.left = rect.left + "px";
     modal.style.top = rect.bottom + "px";
@@ -114,8 +116,14 @@ function showAnswerModal(id, e) {
     modal.style.display = "flex";
   }
   if (window.innerWidth - mouse.x < 220) {
+    if (window.innerHeight - mouse.y < 100) {
+      modal.style.top = Number(modal.style.top.slice(0, -2)) - 250 + "px";
+    }
     modal.style.flexDirection = "column";
   } else {
+    if (window.innerHeight - mouse.y < 100) {
+      modal.style.top = Number(modal.style.top.slice(0, -2)) - 50 + "px";
+    }
     modal.style.flexDirection = "row";
   }
   const button1 = document.getElementById("plus");
@@ -182,7 +190,6 @@ function generateTable() {
     "Pigułka hormonalna",
     "Metoda Rötzera",
     "Prezerwatywa",
-    "Środki chemiczne",
     "Metoda Billingsa",
   ];
 
