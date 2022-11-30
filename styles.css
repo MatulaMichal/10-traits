@@ -259,10 +259,23 @@ body {
     }
   }
 }
+@media(max-width: 360px){
+  .grd_line_ctnr {
+    font-size: 55px;
+    top: 10%;
+  }
+  .grd_line{
+    display:none;
+  }
 
+}
 @media (max-height: 640px) {
   .grd_line {
     display: none;
+  }
+  .grd_line_ctnr {
+    font-size: 55px;
+    top: 10%;
   }
 }
 @media (max-width: 720px) {
@@ -279,6 +292,26 @@ body {
     width: 100vw;
   }
 }
+@media (max-height: 500px) {
+  .tri2 {
+    display: none;
+  }
+  .triImg5 {
+    display: none;
+  }
+  .footer {
+    width: 100vw;
+    height:80px;
+  }
+  .logo_ctnr {
+    width: 100vw;
+   
+  }
+  .h1 {
+    font-size: 25px !important;
+  }
+}
+
 
 .transition {
   transition: opacity 0.3s ease, height 0.5s 0.3s ease;
