@@ -310,6 +310,24 @@ body {
   .h1 {
     font-size: 25px !important;
   }
+  .nav li a {
+    font-size: 14px !important;
+ 
+  }
+  .nav li button {
+    font-size: 14px !important;
+ 
+  }
+  .li-pdn {
+    padding:0px !important;
+  }
+
+  .nav li {
+    padding: 7px 0px !important;
+  }
+  .access {
+    font-size: 14px !important;
+  }
 }
 
 
