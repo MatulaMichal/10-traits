@@ -136,7 +136,7 @@ function showAnswerModal(id, e) {
   button1.onclick = () => {
     button.innerHTML = "+";
     button.classList.remove("selected-minus");
-    button.classList.remove(".elected-neutral");
+    button.classList.remove("selected-neutral");
     button.classList.add("selected-plus");
     modal.style.display = "none";
   };
@@ -175,20 +175,20 @@ function showAnswerModal(id, e) {
 function generateTable() {
   const columnTitles = [
     "Metody i środki",
-    "Zdrowa",
-    "Skuteczna",
-    "Odwracalna",
-    "Prosta w uyciu",
-    "Łatwa do odstawienia",
-    "Tania",
-    "Do stosowania bez nadzoru lekarza",
-    "Akceptowalna",
-    "Pod kontrolą kobiety",
+    "Nie szkodzi zdrowiu, jest całkowicie bezpieczna",
+    "Jest w 100% skuteczna",
+    "Nie wymaga dodatkowych czynności w związku ze zbliżeniem",
+    "Jej efekt antykoncepcyjny jest odwracalny",
+    "Jest prosta, bezbolesna, nie wymaga skrupulatności",
+    "Łatwo ją odstawić",
+    "Jest tania i łatwo dostępa",
+    "Jest akceptowalna przez każdą kulturę, religię",
+    "Podaje się kontroli kobiety",
   ];
   const methods = [
-    "Wkładka domaciczna - spirala",
+    "Wkładka wewnątrzmaciczna - spirala",
     "Pigułka hormonalna",
-    "Metoda Rötzera",
+    "Metoda objawowo-termiczna (metoda Rötzera)",
     "Prezerwatywa",
     "Metoda Billingsa",
   ];
