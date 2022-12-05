@@ -183,7 +183,7 @@ function generateTable() {
     "Łatwo ją odstawić",
     "Jest tania i łatwo dostępa",
     "Jest akceptowalna przez każdą kulturę, religię",
-    "Podaje się kontroli kobiety",
+    "Poddaje się kontroli kobiety",
   ];
   const methods = [
     "Wkładka wewnątrzmaciczna - spirala",

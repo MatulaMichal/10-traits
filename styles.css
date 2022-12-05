@@ -3,6 +3,10 @@
   src: url("/assets/fonts/Lato-Regular.ttf");
 }
 @font-face {
+  font-family: "LatoBold";
+  src: url("/assets/fonts/Lato-Bold.ttf");
+}
+@font-face {
   font-family: "Crimson";
   src: url("/assets/fonts/CrimsonPro-Italic-VariableFont_wght.ttf");
 }
@@ -243,7 +247,7 @@ body {
   }
   .grd_line_ctnr {
     font-size: 80px;
-    top: 10%;
+    top: 25%;
   }
 }
 @media (min-width: 720px) {
@@ -260,20 +264,25 @@ body {
     }
   }
 }
-@media(max-width: 360px){
+@media (max-width: 360px) {
   .grd_line_ctnr {
     font-size: 55px;
-    top: 10%;
+    top: 15%;
   }
-  .grd_line{
-    display:none;
+  .grd_line {
+    display: none;
   }
-
 }
 @media (max-height: 640px) {
   .grd_line {
     display: none;
   }
+  .grd_line_ctnr {
+    font-size: 55px;
+    top: 10%;
+  }
+}
+@media (max-height: 360px) {
   .grd_line_ctnr {
     font-size: 55px;
     top: 10%;
@@ -292,6 +301,10 @@ body {
   .logo_ctnr {
     width: 100vw;
   }
+  .grd_line_ctnr {
+    font-size: 55px;
+    top: 20%;
+  }
 }
 @media (max-height: 500px) {
   .tri2 {
@@ -302,25 +315,22 @@ body {
   }
   .footer {
     width: 100vw;
-    height:80px;
+    height: 80px;
   }
   .logo_ctnr {
     width: 100vw;
-   
   }
   .h1 {
     font-size: 25px !important;
   }
   .nav li a {
     font-size: 14px !important;
- 
   }
   .nav li button {
     font-size: 14px !important;
- 
   }
   .li-pdn {
-    padding:0px !important;
+    padding: 0px !important;
   }
 
   .nav li {
@@ -330,7 +340,6 @@ body {
     font-size: 14px !important;
   }
 }
-
 
 .transition {
   transition: opacity 0.3s ease, height 0.5s 0.3s ease;
@@ -354,6 +363,18 @@ body {
 .h1Dark {
   color: var(--primaryFont) !important;
 }
+@media (max-height: 420px){
+  .nav li button {
+    font-size: 12px !important;
+  }
+  .nav li a {
+    font-size: 12px !important;
+  }
+  .menu-icon{
+    width: 17px !important;
+    height: 17px !important;
+  }
+}
 @media (max-width: 1260px) {
   .h1media {
     font-size: calc(48px * var(--fontSizeMultiplier));
@@ -368,8 +389,16 @@ body {
 .h1_mg {
   margin: 0px 0px 40px 0px;
 }
+.h1_mg_inst {
+  margin: 0px 0px 40px 0px;
+}
 .h1_mgReset {
   margin: 20px 0px 0px 0px;
+}
+@media (max-width: 720px) {
+  .h1_mg_inst {
+    margin: 20px 0px 0px 0px;
+  }
 }
 .dsc {
   font-size: calc(20px * var(--fontSizeMultiplier));
@@ -384,6 +413,10 @@ body {
 @media (max-width: 720px) {
   .dscmedia {
     font-size: calc(14px * var(--fontSizeMultiplier));
+    padding: 5px !important;
+  }
+  .dsc {
+    line-height: 25px;
   }
 }
 .dsc_padding {
@@ -418,6 +451,7 @@ body {
 @media (max-width: 720px) {
   .btn {
     font-size: calc(14px * var(--fontSizeMultiplier));
+    padding: 0px;
   }
 }
 .btn_alt {
@@ -443,6 +477,7 @@ body {
 @media (max-width: 720px) {
   .btn_alt {
     font-size: calc(14px * var(--fontSizeMultiplier));
+    padding: 0px;
   }
 }
 
@@ -869,7 +904,11 @@ body {
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
   animation: show 0.8s;
 }
-
+@media (max-height: 360px) {
+  .modal {
+    padding-top: 25px;
+  }
+}
 /* Modal Content */
 .modal-content {
   background-color: var(--secondaryFont);
@@ -885,8 +924,14 @@ body {
   position: relative;
   animation: show 0.8s;
 }
+
+@media (max-width: 960px) {
+  .modal-content {
+    width: 85%;
+    padding: 20px 5px;
+  }
+}
 .modal-reset {
-  width: 50%;
   height: fit-content;
 }
 
@@ -897,6 +942,10 @@ body {
   align-items: center;
   width: 90%;
   height: 90%;
+}
+
+.modal-text p{
+  font-family: "LatoBold";
 }
 .close {
   color: var(--modalClose);
