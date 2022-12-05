@@ -116,12 +116,12 @@ function showAnswerModal(id, e) {
     modal.style.display = "flex";
   }
   if (window.innerWidth - mouse.x < 220) {
-    if (window.innerHeight - mouse.y < 100) {
-      modal.style.top = Number(modal.style.top.slice(0, -2)) - 250 + "px";
+    if (window.innerHeight - mouse.y < 150) {
+      modal.style.top = Number(modal.style.top.slice(0, -2)) - 200 + "px";
     }
     modal.style.flexDirection = "column";
   } else {
-    if (window.innerHeight - mouse.y < 100) {
+    if (window.innerHeight - mouse.y < 150) {
       modal.style.top = Number(modal.style.top.slice(0, -2)) - 50 + "px";
     }
     modal.style.flexDirection = "row";
@@ -173,15 +173,19 @@ function showAnswerModal(id, e) {
 // }
 
 function generateTable() {
+  if(ios()){
+    const fullScreen = document.querySelector("#full");
+    fullScreen.classList.add("hidden");
+  }
   const columnTitles = [
-    "Metody i środki",
+    "Metody i\u00A0środki",
     "Nie szkodzi zdrowiu, jest całkowicie bezpieczna",
-    "Jest w 100% skuteczna",
-    "Nie wymaga dodatkowych czynności w związku ze zbliżeniem",
+    "Jest w\u00A0100% skuteczna",
+    "Nie wymaga dodatkowych czynności w\u00A0związku ze\u00A0zbliżeniem",
     "Jej efekt antykoncepcyjny jest odwracalny",
     "Jest prosta, bezbolesna, nie wymaga skrupulatności",
     "Łatwo ją odstawić",
-    "Jest tania i łatwo dostępa",
+    "Jest tania i\u00A0łatwo dostępa",
     "Jest akceptowalna przez każdą kulturę, religię",
     "Poddaje się kontroli kobiety",
   ];
@@ -189,7 +193,7 @@ function generateTable() {
     "Wkładka wewnątrzmaciczna - spirala",
     "Pigułka hormonalna",
     "Metoda objawowo-termiczna (metoda Rötzera)",
-    "Prezerwatywa",
+    "Prezerwaty\u00ADwa",
     "Metoda Billingsa",
   ];
 
@@ -334,4 +338,10 @@ function toggleContrast() {
 
   const icons = document.querySelectorAll(".menu-icon");
   Array.from(icons).map((icon) => icon.classList.toggle("contrastHidden"));
+}
+
+function ios (){
+  if (typeof window === `undefined` || typeof navigator === `undefined`) return false;
+
+  return /iPhone|iPad|iPod/i.test(navigator.userAgent || navigator.vendor || (window.opera && opera.toString() === `[object Opera]`));
 }
