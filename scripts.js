@@ -185,7 +185,7 @@ function generateTable() {
     "Jej efekt antykoncepcyjny jest odwracalny",
     "Jest prosta, bezbolesna, nie wymaga skrupulatności",
     "Łatwo ją odstawić",
-    "Jest tania i\u00A0łatwo dostępa",
+    "Jest tania i\u00A0łatwo dostępna",
     "Jest akceptowalna przez każdą kulturę, religię",
     "Poddaje się kontroli kobiety",
   ];
