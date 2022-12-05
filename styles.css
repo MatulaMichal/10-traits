@@ -731,7 +731,7 @@ body {
   overflow: hidden;
   word-break: normal;
   hyphens: manual;
-  height: 12vh;
+  height: 11.5vh;
   width: calc(12vh * 1.38);
   min-height: 50px;
   min-width: 70px;
@@ -758,7 +758,7 @@ body {
   hyphens: manual;
   padding: 10px 5px;
   word-break: normal;
-  height: 12vh;
+  height: 11.5vh;
   width: calc(12vh * 1.38);
   min-height: 50px;
   min-width: 70px;
