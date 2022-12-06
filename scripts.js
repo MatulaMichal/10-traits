@@ -10,10 +10,18 @@ window.onclick = function (event) {
   const modal = document.getElementById("myModal");
   if (event.target == modal) {
     modal.style.display = "none";
+    const buttons = Array.from(document.getElementsByClassName("gameBtn"));
+    buttons.map((button) => {
+      button.tabIndex = 1;
+    });
   }
   const modal2 = document.getElementById("resetModal");
   if (event.target == modal2) {
     modal2.style.display = "none";
+    const buttons = Array.from(document.getElementsByClassName("gameBtn"));
+    buttons.map((button) => {
+      button.tabIndex = 1;
+    });
   }
 };
 
@@ -37,6 +45,10 @@ function menuOnClick() {
     document.getElementById("menu-reset").classList.remove("option-visible");
   }
   document.getElementById("menu-bar").blur();
+  const buttons = Array.from(document.getElementsByClassName("gameBtn"));
+  buttons.map((button) => {
+    button.tabIndex === -1 ? (button.tabIndex = 1) : (button.tabIndex = -1);
+  });
 }
 function triggerFullscreen() {
   if (
@@ -82,21 +94,33 @@ function transition() {
   const modal = document.getElementById("myModal");
 
   setTimeout(() => (modal.style.display = "block"), 400);
+
+  const buttons = Array.from(document.getElementsByClassName("gameBtn"));
+  buttons.map((button) => {
+    button.tabIndex === -1;
+  });
 }
 
 function hideModal() {
   const modal = document.getElementById("myModal");
   modal.style.display = "none";
+  const buttons = Array.from(document.getElementsByClassName("gameBtn"));
+  buttons.map((button) => {
+    button.tabIndex = 1;
+  });
 }
 
 function onButtonClick(id, e) {
-  console.log(e);
   showAnswerModal(id, e);
 }
 
 function hideResetModal() {
   const modal = document.getElementById("myModal");
   modal.style.display = "none";
+  const buttons = Array.from(document.getElementsByClassName("gameBtn"));
+  buttons.map((button) => {
+    button.tabIndex = 1;
+  });
 }
 
 function showAnswerModal(id, e) {
@@ -106,7 +130,7 @@ function showAnswerModal(id, e) {
   // const modalOverlay = document.getElementById("answerOverlay");
   // modalOverlay.style.display = "flex";
 
-  if (e.clientX === 0 && e.clientY === 0) {
+  if (e === 0) {
     const rect = button.getBoundingClientRect();
     modal.style.left = rect.left + "px";
     modal.style.top = rect.bottom + "px";
@@ -140,14 +164,21 @@ function showAnswerModal(id, e) {
     button.classList.remove("selected-neutral");
     button.classList.add("selected-plus");
     modal.style.display = "none";
+    const buttons = Array.from(document.getElementsByClassName("gameBtn"));
+    buttons.map((button) => {
+      button.tabIndex = -1;
+    });
   };
   button2.onclick = () => {
     button.innerHTML = "+ -";
-
     button.classList.remove("selected-minus");
     button.classList.remove("selected-plus");
     button.classList.add("selected-neutral");
     modal.style.display = "none";
+    const buttons = Array.from(document.getElementsByClassName("gameBtn"));
+    buttons.map((button) => {
+      button.tabIndex = 1;
+    });
   };
   button3.onclick = () => {
     button.innerHTML = "-";
@@ -155,9 +186,17 @@ function showAnswerModal(id, e) {
     button.classList.remove("selected-neutral");
     button.classList.add("selected-minus");
     modal.style.display = "none";
+    const buttons = Array.from(document.getElementsByClassName("gameBtn"));
+    buttons.map((button) => {
+      button.tabIndex = 1;
+    });
   };
-  if (e.pointerId === -1) {
+  if (e === 0) {
     button1.focus();
+    const buttons = Array.from(document.getElementsByClassName("gameBtn"));
+    buttons.map((button) => {
+      button.tabIndex = -1;
+    });
   }
 }
 
@@ -174,7 +213,7 @@ function showAnswerModal(id, e) {
 // }
 
 function generateTable() {
-  if(ios()){
+  if (ios()) {
     const fullScreen = document.querySelector("#full");
     fullScreen.classList.add("hidden");
   }
@@ -226,9 +265,10 @@ function generateTable() {
         const cell = document.createElement("td");
         cell.classList.add("tg-0pky");
         const button = document.createElement("button");
-       cell.classList.add("gameBtn");
-     cell.setAttribute("id", `mth${index}col${i}`);
-     cell.addEventListener("click", (e) => onButtonClick(cell.id, e));
+        cell.classList.add("gameBtn");
+        cell.setAttribute("id", `mth${index}col${i}`);
+        cell.addEventListener("click", (e) => onButtonClick(cell.id, 1));
+        cell.addEventListener("keypress", () => onButtonClick(cell.id, 0));
         // button.addEventListener('mouseenter', ()=> mouseEnter(button.id));
         // button.addEventListener('mouseleave', ()=> mouseLeave(button.id));
         // cell.appendChild(button);
@@ -271,11 +311,19 @@ function clearValuesNoMenu() {
 function showResetModal() {
   const modal = document.getElementById("resetModal");
   setTimeout(() => (modal.style.display = "block"), 400);
+  const buttons = Array.from(document.getElementsByClassName("gameBtn"));
+  buttons.map((button) => {
+    button.tabIndex = -1;
+  });
 }
 
 function hideResetModal() {
   const modal = document.getElementById("resetModal");
   modal.style.display = "none";
+  const buttons = Array.from(document.getElementsByClassName("gameBtn"));
+  buttons.map((button) => {
+    button.tabIndex = 1;
+  });
 }
 
 function resetClick() {
@@ -344,8 +392,13 @@ function toggleContrast() {
   Array.from(icons).map((icon) => icon.classList.toggle("contrastHidden"));
 }
 
-function ios (){
-  if (typeof window === `undefined` || typeof navigator === `undefined`) return false;
+function ios() {
+  if (typeof window === `undefined` || typeof navigator === `undefined`)
+    return false;
 
-  return /iPhone|iPad|iPod/i.test(navigator.userAgent || navigator.vendor || (window.opera && opera.toString() === `[object Opera]`));
+  return /iPhone|iPad|iPod/i.test(
+    navigator.userAgent ||
+      navigator.vendor ||
+      (window.opera && opera.toString() === `[object Opera]`)
+  );
 }
