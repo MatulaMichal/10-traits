@@ -293,7 +293,6 @@ function toggleContrast() {
   const properties = {
     "--primary": { normal: "#f3a894", highContrast: "#000000" },
     "--secondary": { normal: "#fad0bd", highContrast: "#000000" },
-    "--secondaryContrast": { normal: "#fad0bd", highContrast: "#ff0" },
     "--secondaryMenu": { normal: "#fad0bd", highContrast: "#ff0" },
     "--tertiary": { normal: "#feebe0", highContrast: "#ff0" },
     "--highlight": { normal: "#fcefe8", highContrast: "#ff0" },
@@ -301,8 +300,8 @@ function toggleContrast() {
     "--primaryFontMenu": { normal: "#000000", highContrast: "#ff0" },
     "--secondaryFont": { normal: "#ffffff", highContrast: "#ff0" },
     "--lightBg": { normal: "#ffffff", highContrast: "#000000" },
-    "--primaryDark": { normal: "#eb7f64", highContrast: "#000000" },
-    "--primaryDarkMenu": { normal: "#eb7f64", highContrast: "#ff0" },
+    "--primaryDark": { normal: "##c55a40", highContrast: "#000000" },
+    "--primaryDarkMenu": { normal: "#c55a40", highContrast: "#ff0" },
     "--modalClose": { normal: "#aaaaaa", highContrast: "#000000" },
   };
 
@@ -329,6 +328,10 @@ function toggleContrast() {
 
   const headers = document.querySelectorAll("th");
   Array.from(headers).map((header) =>
+    header.classList.toggle("contrastBorder")
+  );
+  const rowHeaders = document.querySelectorAll(".first");
+  Array.from(rowHeaders).map((header) =>
     header.classList.toggle("contrastBorder")
   );
   const buttons = document.querySelectorAll(".btn");
