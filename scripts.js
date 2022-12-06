@@ -102,6 +102,7 @@ function hideResetModal() {
 function showAnswerModal(id, e) {
   const modal = document.getElementById("answerModal");
   const button = document.getElementById(id);
+
   // const modalOverlay = document.getElementById("answerOverlay");
   // modalOverlay.style.display = "flex";
 
@@ -179,10 +180,10 @@ function generateTable() {
   }
   const columnTitles = [
     "Metody i\u00A0środki",
-    "Nie szkodzi zdrowiu, jest całkowicie bezpieczna",
+    "Nie szkodzi zdrowiu, jest całko\u00ADwi\u00ADcie bezpie\u00ADczna",
     "Jest w\u00A0100% skuteczna",
-    "Nie wymaga dodatkowych czynności w\u00A0związku ze\u00A0zbliżeniem",
-    "Jej efekt antykoncepcy\u00ADjny jest odwracalny",
+    "Nie wymaga dodatko\u00ADwych czynności w\u00A0związku ze\u00A0zbliżeniem",
+    "Jej efekt antykonce\u00ADpcy\u00ADjny jest odwracalny",
     "Jest prosta, bezbolesna, nie wymaga skrupulatno\u00ADści",
     "Łatwo ją odstawić",
     "Jest tania i\u00A0łatwo dostępna",
@@ -191,9 +192,9 @@ function generateTable() {
   ];
   const methods = [
     "Wkładka wewnątrz\u00ADmaciczna - spirala",
-    "Pigułka hormonalna",
+    "Pigułka hormonal\u00ADna",
     "Metoda objawowo-termiczna (metoda Rötzera)",
-    "Prezerwaty\u00ADwa",
+    "Prezerwa\u00ADty\u00ADwa",
     "Metoda Billingsa",
   ];
 
@@ -225,12 +226,12 @@ function generateTable() {
         const cell = document.createElement("td");
         cell.classList.add("tg-0pky");
         const button = document.createElement("button");
-        button.classList.add("gameBtn");
-        button.setAttribute("id", `mth${index}col${i}`);
-        button.addEventListener("click", (e) => onButtonClick(button.id, e));
+       cell.classList.add("gameBtn");
+     cell.setAttribute("id", `mth${index}col${i}`);
+     cell.addEventListener("click", (e) => onButtonClick(cell.id, e));
         // button.addEventListener('mouseenter', ()=> mouseEnter(button.id));
         // button.addEventListener('mouseleave', ()=> mouseLeave(button.id));
-        cell.appendChild(button);
+        // cell.appendChild(button);
         row.appendChild(cell);
       }
     }
