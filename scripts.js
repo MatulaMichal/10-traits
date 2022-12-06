@@ -300,7 +300,7 @@ function toggleContrast() {
     "--primaryFontMenu": { normal: "#000000", highContrast: "#ff0" },
     "--secondaryFont": { normal: "#ffffff", highContrast: "#ff0" },
     "--lightBg": { normal: "#ffffff", highContrast: "#000000" },
-    "--primaryDark": { normal: "##c55a40", highContrast: "#000000" },
+    "--primaryDark": { normal: "#c55a40", highContrast: "#000000" },
     "--primaryDarkMenu": { normal: "#c55a40", highContrast: "#ff0" },
     "--modalClose": { normal: "#aaaaaa", highContrast: "#000000" },
   };
