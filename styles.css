@@ -74,17 +74,17 @@ body {
 }
 @media (max-width: 1260px) {
   .ctnr {
-    padding: 120px 40px 0px 40px;
+    padding: 80px 40px 0px 40px;
   }
 }
 @media (max-width: 960px) {
   .ctnr {
-    padding: 100px 20px 0px 20px;
+    padding: 50px 10px 0px 10px;
   }
 }
-@media (max-width: 820px) {
+@media (max-width: 720px) {
   .ctnr {
-    padding: 100px 0px 0px 20px;
+    padding: 30px 10px 0px 10px;
   }
 }
 .trs {
@@ -568,16 +568,30 @@ body {
   all: unset;
   width: 45px;
   height: 40px;
-  margin: 35px 30px 0px 0px;
+  margin: 20px 20px 0px 0px;
   cursor: pointer;
   align-self: end;
 }
-@media (max-width: 960px) {
+@media (max-width: 1260px) {
   #menu-bar {
     width: 35px;
   }
 }
-
+@media (max-width: 960px) {
+  #menu-bar {
+    width: 30px;
+    margin: 10px 10px 0px 0px;
+  }
+  .bar {
+    height: 3px !important;
+  }
+}
+@media (max-width: 720px) {
+  #menu-bar {
+    width: 25px;
+    margin: -3px 10px 0px 0px;
+  }
+}
 #menu-bar.change:focus .bar {
   background-color: var(--primaryDarkMenu);
 }
@@ -616,7 +630,14 @@ body {
 #bar3 {
   transform: translateY(4px);
 }
-
+@media (max-width: 960px) {
+  #bar1 {
+   transform: translateY(-2px);
+   }
+  #bar3 {
+   transform: translateY(2px);
+   }
+ }
 .nav {
   transition: 0.3s ease;
   display: none;
@@ -695,7 +716,14 @@ body {
 .change #bar3 {
   transform: translateY(-6px) rotateZ(45deg);
 }
-
+@media (max-width: 960px) {
+  .change #bar1 {
+    transform: translateY(3px) rotateZ(-45deg);
+  }
+  .change #bar3 {
+    transform: translateY(-3px) rotateZ(45deg);
+  }
+}
 .change-bg {
   width: calc(800px * var(--fontSizeMultiplier));
   height: calc(800px * var(--fontSizeMultiplier));
