@@ -72,9 +72,14 @@ body {
   padding: 80px 80px 0px 80px;
   background-color: var(--lightBg);
 }
+@media (max-width: 1440px) {
+  .ctnr {
+    padding: 75px 40px 0px 40px;
+  }
+}
 @media (max-width: 1260px) {
   .ctnr {
-    padding: 80px 40px 0px 40px;
+    padding: 70px 40px 0px 40px;
   }
 }
 @media (max-width: 960px) {
@@ -758,7 +763,7 @@ body {
   overflow: hidden;
   word-break: normal;
   hyphens: manual;
-  height: 11.5vh;
+  height: 11.25vh;
   min-height: 50px;
   min-width: 70px;
   background-color: var(--tertiary);
@@ -784,7 +789,7 @@ body {
   hyphens: manual;
   padding: 10px 5px;
   word-break: normal;
-  height: 11.5vh;
+  height: 11.25vh;
   min-height: 50px;
   min-width: 70px;
   box-shadow: rgba(17, 17, 26, 0.07) 0px 2px 8px,
@@ -982,7 +987,12 @@ body {
   top: 25px;
   right: 30px;
 }
-
+@media(max-width:720px){
+  .close {
+    top: 15px;
+    right: 20px;
+  }
+} 
 .close:hover,
 .close:focus {
   color: #000;
