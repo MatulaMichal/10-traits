@@ -206,6 +206,13 @@ body {
   height: 134px;
   margin-right: -2px;
 }
+.triImgContr {
+  height: 134px;
+  margin-right: -2px;
+}
+.triImgHidden {
+  display: none;
+}
 
 .footer {
   width: 72%;
@@ -218,7 +225,7 @@ body {
 }
 
 .logo_ctnr {
-  background-color: #ffffff;
+  background-color: var(--secondaryFont);
   width: calc(100% - 134px);
   height: 100%;
   display: flex;
@@ -299,6 +306,9 @@ body {
   .triImg5 {
     display: none;
   }
+  .triImgContr {
+    display: none;
+  }
   .footer {
     width: 100vw;
   }
@@ -315,6 +325,9 @@ body {
     display: none;
   }
   .triImg5 {
+    display: none;
+  }
+  .triImgContr {
     display: none;
   }
   .footer {

@@ -370,7 +370,9 @@ function toggleContrast() {
   document.querySelector(".tri2").classList.toggle("contrastHidden");
   document.querySelector(".tri3").classList.toggle("contrastHidden");
   document.querySelector(".tri4").classList.toggle("contrastHidden");
-  document.querySelector(".footer").classList.toggle("contrastHidden");
+  // document.querySelector(".footer").classList.toggle("contrastHidden");
+  document.querySelector(".triImg5").classList.toggle("contrastHidden");
+  document.querySelector(".triImgContr").classList.toggle("contrastHidden");
   document
     .querySelector(".menu-bg.change-bg")
     .classList.toggle("contrastBorder");
