@@ -226,7 +226,7 @@ function generateTable() {
     "Jest prosta, bezbolesna, nie wymaga skrupulatno\u00ADści",
     "Łatwo ją odstawić",
     "Jest tania i\u00A0łatwo dostępna",
-    "Jest akceptowa\u00ADlna przez każdą kulturę, religię",
+    "Jest akcepto\u00ADwal\u00ADna przez każdą kulturę, religię",
     "Poddaje się kontroli kobiety",
   ];
   const methods = [
