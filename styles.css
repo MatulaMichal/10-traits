@@ -46,6 +46,7 @@ body {
   --primary: #f3a894;
   --secondary: #fad0bd;
   --secondaryMenu: #fad0bd;
+  --secondaryMenuContrast: #fad0bd;
   --tertiary: #fae1d2;
   --lightBg: #ffffff;
   --highlight: #fcefe8;
@@ -514,11 +515,11 @@ body {
 
 .btn:hover {
   animation: pulse 1s;
-  background-color: var(--secondaryMenu);
+  background-color: var(--secondaryMenuContrast);
 }
 .btn:focus {
   animation: pulse 1s;
-  background-color: var(--secondaryMenu);
+  background-color: var(--secondaryMenuContrast);
 }
 .btn_alt:hover {
   animation: pulse 1s;
@@ -534,7 +535,7 @@ body {
   all: unset;
   transition: background-size 0.35s ease-out, color 0.35s ease;
   background-image: linear-gradient(transparent, transparent),
-    linear-gradient(#ffffff, #ffffff);
+  linear-gradient(var(--secondaryFont), var(--secondaryFont));
   background-size: 100% 2px, 0 2px;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
@@ -543,7 +544,7 @@ body {
 .menu-a{
   transition: background-size 0.35s ease-out, color 0.35s ease;
   background-image: linear-gradient(transparent, transparent),
-    linear-gradient(#ffffff, #ffffff);
+    linear-gradient(var(--secondaryFont), var(--secondaryFont));
   background-size: 100% 2px, 0 2px;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
